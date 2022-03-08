@@ -9,7 +9,7 @@ mysql -u root -p
 #建立database
 create database database_name;
 #使用database
-use database;
+use database_name;
 #建立table
 create table table_name;
 #顯示table
