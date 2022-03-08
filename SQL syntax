@@ -1,0 +1,38 @@
+#本地端安裝mysql
+mysqld --initialize --console
+mysqld --install
+#改密碼
+mysqladmin -u root -p password 
+#登入
+mysql -u root -p 
+
+#建立database
+create database database_name;
+#使用database
+use database;
+#建立table
+create table table_name;
+#顯示table
+show tables;
+#改欄位名稱
+ALTER TABLE `table_name` CHANGE old_table_name new_table_name int;
+#更改欄位內資料
+UPDATE `table_name` SET `column_name` = '11001'  WHERE `column_name` = '欄位內值'  ;
+#選取某張表
+SELECT * FROM example.table_name;
+
+#創建表時的註釋
+create table table_name
+(
+id int not null auto_increment primary key comment '字段的註釋'
+add index `column_name`(`column_name`ASC)visible
+)comment='表的註釋';
+
+#計算重複出現的值的次數
+select
+column_name,
+COUNT(*) as COUNT
+from
+table_name
+group by
+column_name
